@@ -1,0 +1,33 @@
+//COLORS
+$color-white: #fff;
+$color-black: #000;
+
+$color-primary: #800080;
+$color-primary-light: lighten($color-primary, 8);
+$color-primary-dark: darken($color-primary, 8);
+
+$color-grey: #F7F7F7; // lighten($color-primary, 75); //#ebf1f1;//
+$color-grey-dark: #777;
+
+
+$color-secondary: #2D2D2D;
+
+//FONTS
+$font-primary:  Acme, serif;
+// $font-primary:  Amaranth, serif;
+// font-family: 'Amaranth', sans-serif;
+
+//FONT-SIZES
+$heading : 3rem;
+
+$padding-sides : 10vw;
+
+$shadow-dark: 0 0rem 6rem rgba($color-black,.6);
+$shadow-light: 0 2rem 5rem rgba($color-black,.1);
+$shadow-slight: 0 2rem 5rem rgba($color-black,.3);
+
+// $line: 1px solid var($color-grey-light-2);
+
+
+
+

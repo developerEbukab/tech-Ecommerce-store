@@ -1,0 +1,235 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    // This defines what 1rem is
+    font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+    @include respond(tab-land) { // width < 1200?
+        font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+    }
+
+    @include respond(tab-port) { // width < 900?
+        font-size: 50%; //1 rem = 8px, 8/16 = 50%
+    }
+    
+    @include respond(big-desktop) {
+        font-size: 75%; //1rem = 12, 12/16
+    }
+}
+
+body {
+    box-sizing: border-box;
+    background-color: $color-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Acme";
+}
+
+.app{
+    width: 99vw;
+    height: 98vh;
+    // background-color: $color-grey-light;
+    background-color: $color-white;
+    box-shadow: $shadow-dark;
+
+    &__content{
+        height: 92%;
+        width: 100%;
+        // background-color: blue;
+        // background-color: green;
+        overflow-y: scroll;
+    }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    @include transition;
+}
+
+// a:hover{
+//     font-weight: bold;
+//     color: red;
+//     border-bottom: 1px solid  red;
+//   }
+
+input, button{
+    font-family: inherit;
+    font-size: inherit;
+    //background-color: transparent;
+}
+
+textarea:focus, input:focus, input:active,button, button:focus, button:active, select:focus, select:active{
+    outline: none;
+    font-family: inherit;
+    border: none;
+    //background-color: transparent;
+}
+
+.authBottomMarginTop{
+    margin-top: 3rem;
+  }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px $color-grey inset !important;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+.animate {
+    -moz-transition:all .5s ease-in-out 0s;
+    -o-transition:all .5s ease-in-out 0s;
+    -webkit-transition:all .5s ease-in-out 0s;
+}
+
+.listItems{
+    display: flex;
+    margin-bottom: .2rem;
+
+    .bulletPoint{
+      color: grey;
+      margin-right: 1rem;
+      font-weight: bold;
+    //   display: none;
+    }
+  }
+
+.buttonPressEffect{ 
+    box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+    &:active {
+        transform: translateY(3px);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    }
+}
+
+.buttonUnderline{
+    font-weight:  bold;
+    font-size: 2.2rem;
+    float: right;
+    padding-bottom: 2px;
+    position: relative;
+    @include rotate(-3deg);
+  
+    @include underline;
+
+    &:hover{
+      @include rotate(0deg);
+      color: $color-primary;
+    }
+}
+
+.auth{
+    // background-color: grey;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10vh;
+
+    &__container{
+        // background-color: grey;
+        width: 40%;
+
+        &__heading{
+            margin-bottom: 2rem;
+        }
+
+        &__input{
+            // background-color: grey;
+            margin-bottom: 1rem;
+
+            .label{
+                color: $color-secondary;
+                //background-color: grey;
+                background-image: linear-gradient(white 60%, $color-grey 40%,);
+                padding: 0 1rem;
+                display: inline-block;
+                border: 0px solid transparent;
+                transform: translate(2rem ,40%);
+            }
+
+            input{
+                background-color: $color-grey;
+                border: 1px solid darken($color-grey, 10);
+                width: 100%;
+                border-radius: 1000rem;
+                padding: 0 2rem;
+                height: 4.5rem;
+            }
+        }
+
+        &__footer{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 3.5rem;
+
+            &__button{
+                background-color: $color-primary;
+                // width: 40%;
+                padding: 0 3rem;
+                color: $color-white;
+                font-family: inherit;
+                box-shadow: 0 0 3rem rgba($color: $color-black, $alpha: .2);
+                transition: all .4s ;
+                font-weight: bold;
+                text-align: center;
+                height: 4.5rem;
+                display: flex;
+                align-items: center;
+                border-radius: 100rem;
+
+                &:hover{
+                    box-shadow: 0 0 3rem rgba($color: $color-black, $alpha: .4);
+                    transform: translateY(-.1rem) scale(1.05);
+                    cursor: pointer;
+                    // color: $color-primary;
+                    background-color: darken($color-primary, 5);
+                }  
+                
+                &:active{
+                    box-shadow: 0 0 3rem rgba($color: $color-black, $alpha: .1);
+                    transform: translateY(0rem) scale(.99);
+                    cursor: pointer;
+                    // color: $color-primary;
+                    background-color: darken($color-primary, 5);
+                }
+            }
+
+            &__link{
+                transition: all .4s ;
+
+                &:hover{
+                    font-weight: bold;
+                }
+
+                &--highlight{
+                    color: $color-primary;
+
+                }
+            }
+        }
+    }
+}
+
+

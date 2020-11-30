@@ -1,0 +1,81 @@
+@import "../../sass/mixins";
+@import "../../sass/variables";
+
+.header{
+  height: 8%;
+  width: 100%;
+  // background-color: $color-primary;
+  border-bottom: 1px solid $color-grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include horizontal-gutter;
+
+  &__links{
+    // background-color: grey;
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    // background-color: green;
+
+    i{
+      margin-right: 1.3rem;
+      margin-bottom: .3rem;
+    }
+
+    &--link{
+      // margin-right: 2.5rem;
+
+      transition: all .2s ease-in-out;
+      color: inherit;
+      // background-color: red;
+      padding: 0 2rem;
+      height: 100%;
+      display: flex;
+      // justify-content: space-between;
+      align-items: center;
+      display: flex;
+      align-items: center;
+
+      &--active{
+        font-weight: bold;
+        color: $color-primary;
+        cursor: pointer;
+        background-color: $color-grey;
+      }
+
+
+      &:hover{
+        font-weight: bold;
+        // color: $color-primary;
+        cursor: pointer;
+        background-color: $color-grey;
+      }
+    }
+
+    &--cta{
+      display: flex;
+      align-items: center;
+      transition: all .2s ease-in-out;
+      background-color: $color-primary;
+      height: 100%;
+      padding: 0 2rem;
+      color: $color-white;
+
+      img{
+        height: 5rem;
+        width: 5rem;
+        border-radius: 1000rem;
+        margin-right: 1rem;
+        transition: all .2s ease-in-out;
+      }
+
+      &:hover{
+        background-color: $color-primary-dark;
+        cursor: pointer;
+        font-weight: bold;
+      }
+    }
+  }
+}
